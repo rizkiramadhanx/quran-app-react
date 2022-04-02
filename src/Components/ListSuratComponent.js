@@ -1,0 +1,33 @@
+const ListSuratComponent = ({ surah, lengthRequest }) => {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 md:gap-3 xl:gap-3 my-5">
+      {surah &&
+        lengthRequest &&
+        surah.slice(0, lengthRequest).map((item) => (
+          <div
+            className="flex items-center px-5 py-4 bg-teal-400 rounded-md border-2 border-teal-600 shadow-lg"
+            key={item.number}
+          >
+            <div className="text-xl">{item.number}</div>
+            <div className="ml-5 flex-grow">
+              <div className="text-xl">{item.name.transliteration.id}</div>
+              <div>Pembukaan</div>
+              <div className="text-sm">
+                {item.revelation.id} | {item.numberOfVerses} ayat
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <div className="text-5xl font-serif">{item.name.short}</div>
+              <div className="flex justify-end">
+                <button className="bg-teal-600 hover:bg-teal-200 hover:text-black border-2 border-teal-700 text-white px-2 rounded-md m-2">
+                  Baca Surat
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
+    </div>
+  );
+};
+
+export default ListSuratComponent;
