@@ -8,19 +8,22 @@ const SuratList = () => {
   const [length, setLength] = useState(20);
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [loadmore, setLoadmore] = useState(true);
+
   const fetchData = () => {
     if (search === "") {
-      API.get("surah").then((response) => {
-        setSurah(response.data.data);
-      });
-    } else {
-      API.get("surah").then((response) => {
-        setSurah(
-          response.data.data.filter(
-            (item) => item.transliteration.id === search
-          )
-        );
-      });
+      API.get("surah")
+        .then((response) => {
+          setSurah(response.data.data);
+          setError(false);
+        })
+        .catch((err) => {
+          setError(true);
+        })
+        .finally(() => {
+          setLoading(false);
+        });
     }
   };
 
@@ -30,11 +33,26 @@ const SuratList = () => {
   const HandleChangeSearch = (e) => {
     e.preventDefault();
     setSearch(e.target.value);
+    if (search !== "") {
+      setSurah(
+        surah.filter(
+          (items) =>
+            items.name.transliteration.id
+              .toLowerCase()
+              .includes(search.toLocaleLowerCase()) ||
+            items.name.transliteration.id.toLocaleLowerCase() ===
+              search.toLocaleLowerCase()
+        )
+      );
+      setLoadmore(true);
+    } else {
+      setLoadmore(false);
+    }
   };
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
   return (
     <div className="w-full font-Inter py-5 min-h-screen">
@@ -53,15 +71,26 @@ const SuratList = () => {
             />
           </div>
         </div>
-        {surah && <ListSuratComponent surah={surah} lengthRequest={length} />}
-        <div className="flex">
-          <button
-            className="m-auto bg-teal-400 p-3 rounded-lg hover:bg-teal-700 hover:text-white"
-            onClick={handleMoreClick}
-          >
-            Load More
-          </button>
-        </div>
+        {error && (
+          <div className="text-center text-red-500 mt-5 text-xl">
+            Maaf terjadi error ukhti... 😥😥😥
+          </div>
+        )}
+        {loading && (
+          <div className="text-center text-blue-500 mt-5 text-xl">
+            mohon ditunggu... ✨✨✨
+          </div>
+        )}
+
+        {surah && (
+          <ListSuratComponent
+            surah={surah}
+            lengthRequest={length}
+            handleMoreClick={handleMoreClick}
+            search={search}
+            loadmore={loadmore}
+          />
+        )}
       </div>
     </div>
   );
