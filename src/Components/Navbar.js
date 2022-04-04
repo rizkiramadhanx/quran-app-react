@@ -10,8 +10,23 @@ const Navbar = () => {
           </Link>
           <div>
             <ul className="flex">
-              <li className="mr-5">Github</li>
-              <li>About</li>
+              <li className="mr-5">
+                <a
+                  href="https://github.com/rizkiramadhanx/quran-app-react"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  Github
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://portofolio-rizkiramadhanx.vercel.app/"
+                  rel="noreferrer noopener"
+                >
+                  About
+                </a>
+              </li>
             </ul>
           </div>
         </nav>
