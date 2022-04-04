@@ -44,9 +44,9 @@ const SuratList = () => {
               search.toLocaleLowerCase()
         )
       );
-      setLoadmore(true);
-    } else {
       setLoadmore(false);
+    } else {
+      setLoadmore(true);
     }
   };
 

@@ -22,6 +22,7 @@ const Navbar = () => {
               <li>
                 <a
                   href="https://portofolio-rizkiramadhanx.vercel.app/"
+                  target="_blank"
                   rel="noreferrer noopener"
                 >
                   About

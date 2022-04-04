@@ -10,7 +10,7 @@ const ReadSurah = () => {
   const { number } = useParams();
   const [listAyat, setListAyat] = useState(null);
   const [loadmore, setLoadmore] = useState(true);
-  const [length, setLength] = useState(50);
+  const [length, setLength] = useState(20);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [visibility, setVisibilty] = useState({
@@ -36,7 +36,7 @@ const ReadSurah = () => {
       });
   };
   const handleMoreClick = () => {
-    setLength((prev) => prev + 20);
+    setLength((prev) => prev + 40);
   };
 
   const handleClickInfo = () => {
