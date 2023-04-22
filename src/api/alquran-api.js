@@ -1,5 +1,5 @@
 import Axios from "axios";
 
 export default Axios.create({
-  baseURL: "https://api.quran.sutanlab.id/",
+  baseURL: "https://quran-api-puce.vercel.app/",
 });
