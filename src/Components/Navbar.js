@@ -21,7 +21,7 @@ const Navbar = () => {
               </li>
               <li>
                 <a
-                  href="https://portofolio-rizkiramadhanx.vercel.app/"
+                  href="https://rizkiramadhanx.dev/"
                   target="_blank"
                   rel="noreferrer noopener"
                 >
