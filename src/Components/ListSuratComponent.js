@@ -13,7 +13,7 @@ const ListSuratComponent = ({
           lengthRequest &&
           surah.slice(0, lengthRequest).map((item) => (
             <div
-              className="flex items-center px-5 py-4 bg-teal-300 rounded-md border-2 border-teal-600 shadow-lg"
+              className="flex items-center px-5 py-4 bg-teal-300 rounded-md border-2 border-teal-600 button-shadow-gradient-hover shadow-lg "
               key={item.number}
             >
               <div className="text-xl">{item.number}</div>
