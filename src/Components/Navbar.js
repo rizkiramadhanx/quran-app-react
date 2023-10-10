@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="m-auto w-11/12">
         <nav className="flex justify-between items-center">
           <Link to={"/"}>
-            <div className="text-xl font-medium">Quran App</div>
+            <div className="text-xl font-medium">Quranku</div>
           </Link>
           <div>
             <ul className="flex">

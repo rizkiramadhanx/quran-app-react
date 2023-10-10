@@ -44,7 +44,7 @@ const ListSuratComponent = ({
             className="m-auto bg-teal-400 p-3 rounded-lg hover:bg-teal-700 hover:text-white"
             onClick={handleMoreClick}
           >
-            Load More
+            Tampilkan lebih
           </button>
         </div>
       )}

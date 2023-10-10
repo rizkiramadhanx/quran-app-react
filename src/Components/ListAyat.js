@@ -46,10 +46,10 @@ const ListAyat = ({
       {!stop && loadmore && (
         <div className="flex mt-5">
           <button
-            className="m-auto bg-teal-400 p-3 rounded-lg hover:bg-teal-700 hover:text-white"
+            className="m-auto bg-teal-400 p-1 rounded-lg hover:bg-teal-700 hover:text-white"
             onClick={handleMoreClick}
           >
-            Load More
+            Tampilkan Lebih
           </button>
         </div>
       )}

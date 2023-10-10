@@ -58,7 +58,7 @@ const SuratList = () => {
     <div className="w-full font-Inter py-5 min-h-screen">
       <div className="m-auto w-11/12">
         <div className="flex justify-end">
-          <div className="flex items-center shadow-xl pl-5 border-2 border-slate-500 rounded-2xl">
+          <div className="flex items-center shadow-xl sm:pl-5 pl-1 border-2 border-slate-500 rounded-2xl">
             <div>
               <FcSearch />
             </div>
@@ -73,7 +73,7 @@ const SuratList = () => {
         </div>
         {error && (
           <div className="text-center text-red-500 mt-5 text-xl">
-            Maaf terjadi error ukhti... 😥😥😥
+            Maaf terjadi error 😥😥😥
           </div>
         )}
         {loading && (
